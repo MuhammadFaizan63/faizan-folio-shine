@@ -5,13 +5,14 @@ import {
   Mail,
   Phone,
   Download,
-  ArrowUpRight,
+  ArrowRight,
+  ExternalLink,
   Code2,
   Server,
   Wrench,
+  Hammer,
   Cpu,
   Sparkles,
-  MapPin,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -21,13 +22,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Karachi-based Full-Stack Developer with a hardware diagnostics background. React, Node.js, MongoDB, Docker.",
+          "Portfolio of Muhammad Faizan, a Karachi-based Full-Stack Developer with a hardware diagnostics background, building clean React, Node.js & MongoDB applications.",
       },
       { property: "og:title", content: "Muhammad Faizan — Full-Stack Developer" },
       {
         property: "og:description",
         content:
-          "From diagnosing hardware to architecting full-stack code. Selected work, stack and contact.",
+          "From diagnosing hardware to architecting full-stack code. React, Node.js, MongoDB & Docker projects.",
       },
     ],
   }),
@@ -38,24 +39,24 @@ const projects = [
   {
     title: "To-Do Full-Stack App",
     description:
-      "Task management with auth, persistence and a clean REST API on Node.js and MongoDB.",
-    stack: ["React", "Node.js", "MongoDB"],
+      "A robust, functional task management application with auth, persistence and a clean REST API built on Node.js and MongoDB.",
+    stack: ["React", "Node.js", "MongoDB", "Express"],
     live: "#",
     code: "https://github.com/MuhammadFaizan63",
   },
   {
     title: "Weather Application",
     description:
-      "Real-time weather with dynamic third-party API integration and geolocation.",
-    stack: ["React", "REST API"],
+      "Real-time weather tracking app with dynamic third-party API integration, geolocation and responsive forecast UI.",
+    stack: ["React", "REST API", "Tailwind"],
     live: "#",
     code: "https://github.com/MuhammadFaizan63",
   },
   {
     title: "Netflix Clone",
     description:
-      "Pixel-perfect, fully responsive Netflix landing clone focused on premium UI/UX.",
-    stack: ["React", "Tailwind"],
+      "A visually stunning, highly responsive Netflix landing page clone focused on premium UI/UX and pixel-perfect layout.",
+    stack: ["React", "Tailwind", "Responsive"],
     live: "#",
     code: "https://github.com/MuhammadFaizan63",
   },
@@ -65,17 +66,17 @@ const skills = [
   {
     label: "Frontend",
     icon: Code2,
-    items: ["React", "JavaScript ES5/ES6+", "HTML5", "CSS3", "Responsive Design"],
+    items: ["React", "JavaScript (ES5/ES6+)", "HTML5", "CSS3", "Responsive Web Design"],
   },
   {
     label: "Backend & DevOps",
     icon: Server,
-    items: ["Node.js", "MongoDB", "Docker"],
+    items: ["Node.js", "MongoDB", "Docker (newly mastered)"],
   },
   {
     label: "Systems & Hardware",
     icon: Cpu,
-    items: ["Laptop & PC Repair", "System Maintenance", "Diagnostics"],
+    items: ["Laptop & PC Repair", "System Maintenance", "Technical Diagnostics"],
   },
   {
     label: "Tools",
@@ -83,12 +84,6 @@ const skills = [
     items: ["Git", "GitHub", "Netlify", "Vercel"],
   },
 ];
-
-// Reusable glass card classes
-const glassCard =
-  "rounded-3xl border border-white/10 bg-slate-900/50 backdrop-blur-md transition duration-300";
-const glassCardHover =
-  "hover:border-cyan-400/40 hover:bg-slate-900/70 hover:shadow-[0_0_40px_-10px_rgba(34,211,238,0.45)] hover:-translate-y-1";
 
 function Portfolio() {
   const handleDownloadCV = () => {
@@ -105,122 +100,116 @@ function Portfolio() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100 antialiased selection:bg-cyan-400/30 selection:text-white">
-      {/* Ambient glow background */}
-      <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
-        <div className="absolute -top-40 -left-40 h-[480px] w-[480px] rounded-full bg-cyan-500/15 blur-[120px]" />
-        <div className="absolute top-1/3 -right-40 h-[520px] w-[520px] rounded-full bg-violet-500/10 blur-[140px]" />
-        <div className="absolute -bottom-40 left-1/3 h-[420px] w-[420px] rounded-full bg-teal-500/10 blur-[120px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(8,145,178,0.08),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
-      </div>
-
+    <div className="min-h-screen bg-slate-950 text-slate-100 antialiased selection:bg-emerald-400/30 selection:text-emerald-100">
       {/* NAV */}
-      <header className="sticky top-0 z-50 border-b border-white/5 bg-slate-950/70 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-          <a href="#top" className="flex items-center gap-3">
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-linear-to-br from-cyan-300 to-teal-500 font-display text-sm font-bold text-slate-950 shadow-[0_0_20px_-2px_rgba(34,211,238,0.6)]">
+      <header className="sticky top-0 z-50 border-b border-white/5 bg-slate-950/70 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <a href="#top" className="flex items-center gap-2 font-semibold tracking-tight">
+            <span className="grid h-8 w-8 place-items-center rounded-lg bg-emerald-400/10 text-emerald-400 ring-1 ring-emerald-400/30">
               MF
             </span>
-            <span className="font-display text-sm font-medium tracking-wide text-white">
-              Muhammad Faizan
-            </span>
+            <span className="text-slate-200">Muhammad Faizan</span>
           </a>
           <nav className="hidden gap-8 text-sm text-slate-400 md:flex">
-            <a href="#about" className="transition hover:text-cyan-400">About</a>
-            <a href="#stack" className="transition hover:text-cyan-400">Stack</a>
-            <a href="#projects" className="transition hover:text-cyan-400">Work</a>
-            <a href="#contact" className="transition hover:text-cyan-400">Contact</a>
+            <a href="#about" className="transition hover:text-emerald-400">About</a>
+            <a href="#skills" className="transition hover:text-emerald-400">Skills</a>
+            <a href="#projects" className="transition hover:text-emerald-400">Projects</a>
+            <a href="#contact" className="transition hover:text-emerald-400">Contact</a>
           </nav>
-          <button
-            onClick={handleDownloadCV}
-            className="hidden items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/5 px-4 py-2 text-xs font-medium text-cyan-400 transition hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950 hover:shadow-[0_0_24px_-4px_rgba(34,211,238,0.7)] md:inline-flex"
-          >
-            <Download className="h-3.5 w-3.5" />
-            CV
-          </button>
         </div>
       </header>
 
-      {/* HERO + BENTO */}
-      <section id="top" className="relative">
-        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">
-          <div className="grid auto-rows-[minmax(0,1fr)] grid-cols-1 gap-4 md:grid-cols-6 md:gap-5">
-            {/* Headline */}
-            <div className={`relative overflow-hidden p-8 md:col-span-4 md:row-span-2 md:p-12 ${glassCard}`}>
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/5 px-3 py-1 text-xs font-medium text-cyan-400">
-                <Sparkles className="h-3.5 w-3.5" />
-                Full-Stack Developer
-              </div>
-              <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.05] text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                From diagnosing hardware to{" "}
-                <span className="bg-linear-to-r from-cyan-300 via-teal-300 to-cyan-400 bg-clip-text italic text-transparent">
-                  architecting
-                </span>{" "}
-                full-stack code.
-              </h1>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-400 md:text-lg">
-                I'm Muhammad Faizan — a developer who spent years inside motherboards
-                before turning the same troubleshooting instincts to React, Node.js
-                and MongoDB.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <button
-                  onClick={scrollToProjects}
-                  className="group inline-flex items-center gap-2 rounded-full bg-linear-to-r from-cyan-400 to-teal-400 px-6 py-3 text-sm font-medium text-slate-950 shadow-[0_0_30px_-6px_rgba(34,211,238,0.6)] transition hover:shadow-[0_0_40px_-4px_rgba(34,211,238,0.8)]"
-                >
-                  View My Work
-                  <ArrowUpRight className="h-4 w-4 transition group-hover:rotate-45" />
-                </button>
-                <button
-                  onClick={handleDownloadCV}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-white backdrop-blur-md transition hover:border-cyan-400/50 hover:text-cyan-400"
-                >
-                  <Download className="h-4 w-4" />
-                  Download CV
-                </button>
-              </div>
-            </div>
+      {/* HERO */}
+      <section
+        id="top"
+        className="relative overflow-hidden border-b border-white/5"
+      >
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.18),transparent_60%)]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]"
+        />
+        <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-28 md:pt-32 md:pb-36">
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1 text-xs font-medium text-emerald-300">
+            <Sparkles className="h-3.5 w-3.5" />
+            Full-Stack Developer · Karachi, Pakistan
+          </div>
+          <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            From Diagnosing Hardware to{" "}
+            <span className="bg-linear-to-r from-emerald-300 via-teal-300 to-cyan-300 bg-clip-text text-transparent">
+              Architecting Full-Stack Code.
+            </span>
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">
+            I'm <span className="text-slate-200">Muhammad Faizan</span> — a Full-Stack
+            Developer who spent years inside motherboards before turning the same
+            troubleshooting instincts to React, Node.js and MongoDB. I build clean,
+            reliable web apps with the discipline of a hardware engineer.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <button
+              onClick={scrollToProjects}
+              className="group inline-flex items-center gap-2 rounded-lg bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-300 hover:shadow-emerald-400/40"
+            >
+              View My Work
+              <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+            </button>
+            <button
+              onClick={handleDownloadCV}
+              className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-emerald-400/40 hover:bg-white/10"
+            >
+              <Download className="h-4 w-4" />
+              Download CV
+            </button>
+          </div>
+        </div>
+      </section>
 
-            {/* Monogram */}
-            <div className={`relative overflow-hidden p-8 md:col-span-2 ${glassCard}`}>
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(34,211,238,0.18),transparent_60%)]"
-              />
-              <div className="relative flex h-full flex-col justify-between">
-                <span className="font-display text-xs uppercase tracking-[0.2em] text-cyan-400/80">
-                  /portfolio · 2026
-                </span>
-                <div className="bg-linear-to-br from-cyan-300 to-teal-500 bg-clip-text font-display text-7xl font-bold leading-none text-transparent md:text-8xl">
-                  MF
-                </div>
-              </div>
-            </div>
-
-            {/* Location */}
-            <div className={`p-6 md:col-span-2 ${glassCard}`}>
-              <MapPin className="h-5 w-5 text-cyan-400" />
-              <div className="mt-4 font-display text-xl font-medium text-white">
-                Karachi, Pakistan
-              </div>
-              <p className="mt-1 text-sm text-slate-400">
-                Available worldwide · Remote-first
-              </p>
-            </div>
-
-            {/* Stats */}
-            <div className={`grid grid-cols-3 gap-4 p-6 md:col-span-4 ${glassCard}`}>
+      {/* ABOUT */}
+      <section id="about" className="border-b border-white/5">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-5">
+          <div className="md:col-span-2">
+            <p className="text-sm font-medium uppercase tracking-widest text-emerald-400">
+              About me
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-white md:text-4xl">
+              The tech transition.
+            </h2>
+          </div>
+          <div className="md:col-span-3 space-y-5 text-slate-400 leading-relaxed">
+            <p>
+              For more than <span className="text-slate-200 font-medium">3 years</span> I
+              ran computer and laptop repair work and managed a shop in Karachi —
+              diagnosing dead boards, tracing shorted rails, recovering data and
+              fixing what looked impossible to fix.
+            </p>
+            <p>
+              Every fault on a motherboard is a logic puzzle: isolate the symptom,
+              form a hypothesis, test it, narrow the surface area. That mindset
+              didn't change when I moved to code — it sharpened. Today I apply the
+              same discipline to build full-stack web applications with
+              <span className="text-slate-200"> React, Node.js, MongoDB and Docker</span>.
+            </p>
+            <p>
+              The result is software that's easier to debug, easier to reason about,
+              and built like it has to survive in the real world — because that's
+              the only kind of work I've ever done.
+            </p>
+            <div className="grid grid-cols-3 gap-4 pt-4">
               {[
                 { k: "3+", v: "Years hardware" },
                 { k: "10+", v: "Projects shipped" },
                 { k: "100%", v: "Self-taught" },
               ].map((s) => (
-                <div key={s.v}>
-                  <div className="bg-linear-to-br from-cyan-300 to-teal-400 bg-clip-text font-display text-3xl font-semibold text-transparent md:text-4xl">
-                    {s.k}
-                  </div>
-                  <div className="mt-2 text-xs text-slate-400">{s.v}</div>
+                <div
+                  key={s.v}
+                  className="rounded-xl border border-white/10 bg-white/5 p-4"
+                >
+                  <div className="text-2xl font-bold text-emerald-400">{s.k}</div>
+                  <div className="mt-1 text-xs text-slate-400">{s.v}</div>
                 </div>
               ))}
             </div>
@@ -228,76 +217,34 @@ function Portfolio() {
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section id="about" className="relative">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-24 md:grid-cols-12">
-          <div className="md:col-span-4">
-            <p className="font-display text-xs uppercase tracking-[0.2em] text-cyan-400">
-              01 — About
+      {/* SKILLS */}
+      <section id="skills" className="border-b border-white/5">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium uppercase tracking-widest text-emerald-400">
+              Tech stack
             </p>
-            <h2 className="mt-4 font-display text-4xl font-semibold text-white md:text-5xl">
-              The tech transition.
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-white md:text-4xl">
+              Skills, categorized.
             </h2>
-          </div>
-          <div className="space-y-5 text-slate-400 md:col-span-7 md:col-start-6">
-            <p className="text-lg leading-relaxed text-slate-200">
-              For more than <span className="text-cyan-400">3 years</span> I ran
-              computer and laptop repair work and managed a shop in Karachi —
-              diagnosing dead boards, tracing shorted rails, and recovering what
-              looked unrecoverable.
-            </p>
-            <p className="leading-relaxed">
-              Every fault on a motherboard is a logic puzzle: isolate the symptom,
-              form a hypothesis, test it, narrow the surface area. That mindset
-              didn't change when I moved to code — it sharpened. Today I apply the
-              same discipline to build full-stack web apps with React, Node.js,
-              MongoDB and Docker.
-            </p>
-            <p className="leading-relaxed">
-              The result is software that's easier to debug, easier to reason about,
-              and built like it has to survive in the real world.
+            <p className="mt-4 text-slate-400">
+              A toolkit shaped by both the soldering iron and the source editor.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* STACK */}
-      <section id="stack" className="relative">
-        <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <p className="font-display text-xs uppercase tracking-[0.2em] text-cyan-400">
-                02 — Stack
-              </p>
-              <h2 className="mt-4 font-display text-4xl font-semibold text-white md:text-5xl">
-                Tools of the craft.
-              </h2>
-            </div>
-            <p className="max-w-sm text-sm text-slate-400">
-              Shaped by the soldering iron and the source editor.
-            </p>
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
-            {skills.map(({ label, items, icon: Icon }, i) => (
-              <div key={label} className={`group p-7 ${glassCard} ${glassCardHover}`}>
-                <div className="flex items-center justify-between">
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 shadow-[0_0_20px_-6px_rgba(34,211,238,0.6)]">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <span className="font-display text-xs text-slate-500">
-                    0{i + 1}
-                  </span>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {skills.map(({ label, items, icon: Icon }) => (
+              <div
+                key={label}
+                className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-white/10"
+              >
+                <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-400/10 text-emerald-400 ring-1 ring-emerald-400/20">
+                  <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="mt-5 font-display text-xl font-medium text-white">
-                  {label}
-                </h3>
-                <ul className="mt-4 flex flex-wrap gap-2">
+                <h3 className="mt-4 font-semibold text-white">{label}</h3>
+                <ul className="mt-4 space-y-2 text-sm text-slate-400">
                   {items.map((it) => (
-                    <li
-                      key={it}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300 transition group-hover:border-cyan-400/20"
-                    >
+                    <li key={it} className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-emerald-400" />
                       {it}
                     </li>
                   ))}
@@ -309,75 +256,70 @@ function Portfolio() {
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" className="relative">
-        <div className="mx-auto max-w-7xl px-6 py-24">
+      <section id="projects" className="border-b border-white/5">
+        <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <p className="font-display text-xs uppercase tracking-[0.2em] text-cyan-400">
-                03 — Work
+            <div className="max-w-2xl">
+              <p className="text-sm font-medium uppercase tracking-widest text-emerald-400">
+                Selected work
               </p>
-              <h2 className="mt-4 font-display text-4xl font-semibold text-white md:text-5xl">
-                Selected projects.
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-white md:text-4xl">
+                Projects worth shipping.
               </h2>
             </div>
             <a
               href="https://github.com/MuhammadFaizan63"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-cyan-400"
+              className="inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-emerald-400"
             >
-              All repositories <ArrowUpRight className="h-4 w-4" />
+              All repositories on GitHub <ArrowRight className="h-4 w-4" />
             </a>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-6 md:gap-5">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((p, i) => (
               <article
                 key={p.title}
-                className={`group relative flex flex-col overflow-hidden p-7 ${glassCard} ${glassCardHover} ${
-                  i === 0 ? "md:col-span-4" : i === 1 ? "md:col-span-2" : "md:col-span-6"
-                }`}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-linear-to-b from-white/5 to-transparent p-6 transition hover:-translate-y-1 hover:border-emerald-400/30"
               >
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute -top-32 -right-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl opacity-0 transition group-hover:opacity-100"
-                />
-                <div className="relative flex items-center justify-between">
-                  <span className="font-display text-xs text-slate-500">
-                    /work · 0{i + 1}
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono text-slate-500">
+                    0{i + 1}
                   </span>
-                  <div className="flex gap-1.5">
-                    {p.stack.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] text-slate-400"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
+                  <Hammer className="h-4 w-4 text-emerald-400/70" />
                 </div>
-                <h3 className="relative mt-6 font-display text-2xl font-medium text-white md:text-3xl">
+                <h3 className="mt-4 text-xl font-semibold text-white">
                   {p.title}
                 </h3>
-                <p className="relative mt-3 max-w-xl text-sm leading-relaxed text-slate-400">
+                <p className="mt-3 text-sm leading-relaxed text-slate-400">
                   {p.description}
                 </p>
-                <div className="relative mt-8 flex gap-3">
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {p.stack.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs text-slate-300"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-6 flex gap-3 pt-4">
                   <a
                     href={p.live}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full bg-linear-to-r from-cyan-400 to-teal-400 px-5 py-2.5 text-xs font-medium text-slate-950 shadow-[0_0_20px_-6px_rgba(34,211,238,0.7)] transition hover:shadow-[0_0_30px_-4px_rgba(34,211,238,0.9)]"
+                    className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-emerald-400 px-3 py-2 text-xs font-semibold text-slate-950 transition hover:bg-emerald-300"
                   >
+                    <ExternalLink className="h-3.5 w-3.5" />
                     Live Demo
-                    <ArrowUpRight className="h-3.5 w-3.5" />
                   </a>
                   <a
                     href={p.code}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-xs font-medium text-white backdrop-blur-md transition hover:border-cyan-400/50 hover:text-cyan-400"
+                    className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-100 transition hover:border-emerald-400/40 hover:bg-white/10"
                   >
                     <Github className="h-3.5 w-3.5" />
                     GitHub Code
@@ -389,50 +331,46 @@ function Portfolio() {
         </div>
       </section>
 
-      {/* CONTACT */}
-      <footer id="contact" className="relative overflow-hidden border-t border-white/5">
+      {/* CONTACT / FOOTER */}
+      <footer id="contact" className="relative overflow-hidden">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_100%,rgba(34,211,238,0.12),transparent_70%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(16,185,129,0.12),transparent_60%)]"
         />
-        <div className="relative mx-auto max-w-7xl px-6 py-24">
-          <div className="grid gap-10 md:grid-cols-12">
-            <div className="md:col-span-6">
-              <p className="font-display text-xs uppercase tracking-[0.2em] text-cyan-400">
-                04 — Contact
+        <div className="relative mx-auto max-w-6xl px-6 py-20">
+          <div className="grid gap-12 md:grid-cols-2">
+            <div>
+              <p className="text-sm font-medium uppercase tracking-widest text-emerald-400">
+                Get in touch
               </p>
-              <h2 className="mt-4 font-display text-5xl font-semibold text-white md:text-7xl">
-                Let's build{" "}
-                <span className="bg-linear-to-r from-cyan-300 to-teal-300 bg-clip-text italic text-transparent">
-                  something
-                </span>{" "}
-                reliable.
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-white md:text-4xl">
+                Let's build something reliable.
               </h2>
-              <p className="mt-6 max-w-md text-slate-400">
-                Open to full-stack roles, freelance and collaborations. Email is the
-                fastest way to reach me.
+              <p className="mt-4 max-w-md text-slate-400">
+                Open to full-stack roles, freelance projects and collaborations.
+                The fastest way to reach me is email.
               </p>
             </div>
-            <div className="space-y-3 md:col-span-5 md:col-start-8">
+            <div className="space-y-4">
               <a
                 href="mailto:smartfaizan63@gmail.com"
-                className={`group flex items-center justify-between px-5 py-4 ${glassCard} ${glassCardHover}`}
+                className="group flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-5 py-4 transition hover:border-emerald-400/30 hover:bg-white/10"
               >
-                <span className="flex items-center gap-3">
-                  <Mail className="h-4 w-4 text-cyan-400" />
-                  <span className="text-sm text-white">smartfaizan63@gmail.com</span>
+                <span className="flex items-center gap-3 text-slate-200">
+                  <Mail className="h-4 w-4 text-emerald-400" />
+                  smartfaizan63@gmail.com
                 </span>
-                <ArrowUpRight className="h-4 w-4 text-slate-500 transition group-hover:rotate-45 group-hover:text-cyan-400" />
+                <ArrowRight className="h-4 w-4 text-slate-500 transition group-hover:translate-x-0.5 group-hover:text-emerald-400" />
               </a>
               <a
                 href="tel:+923118237936"
-                className={`group flex items-center justify-between px-5 py-4 ${glassCard} ${glassCardHover}`}
+                className="group flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-5 py-4 transition hover:border-emerald-400/30 hover:bg-white/10"
               >
-                <span className="flex items-center gap-3">
-                  <Phone className="h-4 w-4 text-cyan-400" />
-                  <span className="text-sm text-white">0311-8237936</span>
+                <span className="flex items-center gap-3 text-slate-200">
+                  <Phone className="h-4 w-4 text-emerald-400" />
+                  0311-8237936
                 </span>
-                <ArrowUpRight className="h-4 w-4 text-slate-500 transition group-hover:rotate-45 group-hover:text-cyan-400" />
+                <ArrowRight className="h-4 w-4 text-slate-500 transition group-hover:translate-x-0.5 group-hover:text-emerald-400" />
               </a>
               <div className="flex gap-3 pt-2">
                 <a
@@ -440,7 +378,7 @@ function Portfolio() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GitHub"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-slate-900/50 text-slate-300 backdrop-blur-md transition hover:border-cyan-400/40 hover:text-cyan-400 hover:shadow-[0_0_20px_-6px_rgba(34,211,238,0.6)]"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition hover:border-emerald-400/40 hover:bg-white/10 hover:text-emerald-400"
                 >
                   <Github className="h-5 w-5" />
                 </a>
@@ -449,19 +387,16 @@ function Portfolio() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-slate-900/50 text-slate-300 backdrop-blur-md transition hover:border-cyan-400/40 hover:text-cyan-400 hover:shadow-[0_0_20px_-6px_rgba(34,211,238,0.6)]"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition hover:border-emerald-400/40 hover:bg-white/10 hover:text-emerald-400"
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
               </div>
             </div>
           </div>
-
-          <div className="mt-20 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-xs text-slate-500 sm:flex-row">
-            <p>© {new Date().getFullYear()} Muhammad Faizan</p>
-            <p className="font-display tracking-wide">
-              Built with React & Tailwind · Karachi, PK
-            </p>
+          <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-xs text-slate-500 sm:flex-row">
+            <p>© {new Date().getFullYear()} Muhammad Faizan. All rights reserved.</p>
+            <p>Built with React & Tailwind CSS · Karachi, PK</p>
           </div>
         </div>
       </footer>
