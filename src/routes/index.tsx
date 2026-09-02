@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import cv from "../muhammad-faizan.pdf"
 import {
   Github,
   Linkedin,
@@ -40,23 +41,35 @@ const projects = [
     title: "Build-AI-Social-Media-Scheduler",
     description:
       "Build-AI-Social-Media-Scheduler is an enterprise-grade, full-stack automation platform designed to streamline content creation and multi-platform publishing. Powered by Artificial Intelligence, the application enables users to seamlessly generate high-engaging posts, orchestrate advanced content pipelines, and schedule automated publishing workflows. Featuring reliable event-driven queue architectures and real-time webhook tracking, it optimizes social media management with production-ready scalability.",
-    stack: ["next.js", "Typescript", "insforge", "ngrok","Prisma ORM","Neon DB / PostgreSQL","Clerk Authentication","Tailwind CSS","Shadcn UI / Radix Primitives"],
+    stack: ["next.js", "Typescript", "insforge", "ngrok", "Prisma ORM", "Neon DB / PostgreSQL", "Clerk Authentication", "Tailwind CSS", "Shadcn UI / Radix Primitives"],
     live: "https://xnd7ui6p.insforge.site/",
     code: "https://github.com/MuhammadFaizan63",
   },
   {
-    title: "Weather Application",
+    title: "Glow Cut",
     description:
-      "Real-time weather tracking app with dynamic third-party API integration, geolocation and responsive forecast UI.",
-    stack: ["React", "REST API", "Tailwind"],
-    live: "#",
+      "Glow-Cut is a modern digital grooming platform built to bridge the gap between clients and top-tier salons. It offers seamless online appointment scheduling, an advanced AI-driven facial scanner for personalized haircut suggestions, and a robust dashboard for owners to manage bookings and daily operations.",
+    stack: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Framer Motion",
+      "Mongoose",
+      "JWT Authentication",
+      "PWA (Progressive Web App)",
+      "AI Integration"
+    ],
+    live: "https://www.glowcut.bond/",
     code: "https://github.com/MuhammadFaizan63",
   },
   {
     title: "Helplytics",
     description:
       "Heplytics is a lightweight, high-performance web analytics platform engineered from scratch during a fast-paced hackathon. Built entirely using core web technologies, the application processes data inputs to deliver instant, real-time visual insights through clean, interactive dashboards. By avoiding heavy framework overhead, it achieves blazing-fast load times and seamless browser rendering, proving that robust data monitoring and responsive layouts can be beautifully executed using pure vanilla architecture",
-    stack: ["HTML5", "CSS3", "Vanilla JavaScript (ES6+)","Fetch API"],
+    stack: ["HTML5", "CSS3", "Vanilla JavaScript (ES6+)", "Fetch API"],
     live: "https://hackathon-frontend-omega-three.vercel.app/",
     code: "https://github.com/MuhammadFaizan63/hackathon-frontend.git",
   },
@@ -88,8 +101,8 @@ const skills = [
 function Portfolio() {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/Resume_Faizan.pdf";
-    link.download = "Resume_Faizan.pdf";
+    link.href = cv;
+    link.download = cv;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
